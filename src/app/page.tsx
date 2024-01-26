@@ -1,4 +1,4 @@
-import {Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import {Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play, Shuffle, SkipBack, SkipForward } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -101,12 +101,22 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <footer className="bg-zinc-800 border-t border-zinc-700 p-6">
-          <div className="flex items-center">
-            <Image src="/matue.jpeg" width={80} height={80}  />
+      <footer className="bg-zinc-800 border-t border-zinc-700 p-6 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Image src="/matue.jpeg" width={56} height={56} alt='Capa do album Máquina do Tempo' />
             <div className="flex flex-col">
-                <strong>Máquina do Tempo</strong>
+                <strong className='font-normal'>Máquina do Tempo</strong>
                 <span>Matuê</span>
+            </div>
+          </div>
+          <div className='flex flex-col items-center'>
+            <div className='flex items-center justify-between'>
+              <Shuffle />
+              <SkipBack />
+              <button className='w-10 h-10 flex pl-0.5 items-center justify-center rounded-full bg-white text-black'>
+                <Play className=''/>
+              </button>
+              <SkipForward />
             </div>
           </div>
       </footer>
